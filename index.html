@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alur Pemesanan Aplikasi Jagel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00796B;
+      --accent-yellow: #FFD600;
+      --accent-green: #4CAF50;
+      --text: #ffffff;
+      --text-dark: #263238;
+      --bg: #004D40;
+      --card-bg: #ffffff;
+      --border: #B2DFDB;
+      --radius: 10px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      padding: 32px;
+      position: relative;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--primary);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1::before {
+      content: '📱';
+      font-size: 30px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-yellow);
+      border: 3px solid var(--primary);
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 26px;
+      width: 2px;
+      height: calc(100% + 20px);
+      background: var(--border);
+    }
+
+    .step-number {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text-dark);
+    }
+
+    .step-desc {
+      color: #555;
+      font-size: 15px;
+      margin-top: 6px;
+    }
+
+    .payment-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent-yellow);
+      color: #000;
+      padding: 10px 16px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .payment-btn:hover {
+      background-color: #FFC107;
+    }
+
+    .payment-btn i {
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      color: #E0F2F1;
+      padding: 24px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* Tombol WA mengambang */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent-yellow);
+      color: #000;
+      border-radius: 50px;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      z-index: 999;
+      transition: background 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #fdd835;
+    }
+
+    .whatsapp-float i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .container {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .whatsapp-float {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
+
+      .whatsapp-float i {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ALUR ORDER</h1>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="step-number">Langkah 1</div>
+        <div class="step-title">Pemesanan</div>
+        <p class="step-desc">Klien menghubungi kami untuk pemesanan pembuatan aplikasi. Diskusi dilakukan mengenai kebutuhan, fitur, tampilan aplikasi, harga, dan lainnya.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 2</div>
+        <div class="step-title">Pembayaran DP 50%</div>
+        <p class="step-desc">Klien melakukan pembayaran uang muka sebesar 50% dari total biaya proyek, setelah tim memberikan tampilan demo aplikasi.</p>
+        <a href="https://shariang12.github.io/Pembayaran/" class="payment-btn">
+          <i class="fas fa-wallet"></i> PEMBAYARAN AWAL
+        </a>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 3</div>
+        <div class="step-title">Proses Pengerjaan</div>
+        <p class="step-desc">Tim mulai mengerjakan desain dan pembangunan aplikasi sesuai permintaan klien.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 4</div>
+        <div class="step-title">Revisi</div>
+        <p class="step-desc">Setelah versi awal selesai, klien dapat mengajukan revisi minor sesuai ketentuan. Maksimal revisi: 2 kali.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 5</div>
+        <div class="step-title">Hasil</div>
+        <p class="step-desc">Aplikasi ditampilkan dalam bentuk final untuk dipreview oleh klien sebelum pelunasan.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 6</div>
+        <div class="step-title">Pelunasan</div>
+        <p class="step-desc">Klien melunasi sisa 50% biaya sebelum aplikasi diberikan secara penuh.</p>
+        <a href="https://shariang12.github.io/Pembayaran/" class="payment-btn">
+          <i class="fas fa-wallet"></i>PELUNASAN
+        </a>
+      </div>
+
+      <div class="step">
+        <div class="step-number">Langkah 7</div>
+        <div class="step-title">Pemberian Akses</div>
+        <p class="step-desc">Setelah pelunasan, akses penuh diberikan kepada klien (akun pusat aplikasi, admin web, email, dll).</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">ZBOND DIGITAL</div>
+    <div>© 2025 ZBOND DIGITAL. All rights reserved.</div>
+  </footer>
+
+  <!-- Tombol WhatsApp Mengambang -->
+  <a href="https://wa.me/6283852330333" target="_blank" class="whatsapp-float">
+    <i class="fas fa-headset"></i> Hubungi Kami
+  </a>
+</body>
+</html>
